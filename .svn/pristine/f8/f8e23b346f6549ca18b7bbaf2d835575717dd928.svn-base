@@ -1,0 +1,136 @@
+package edu.psgv.sweng861;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+/**
+ * This class represents a general playlist file and performs common operations
+ * 
+ * @author Kyle Hughes
+ */
+public abstract class Playlist {
+	protected static final String seperator = "***********************************************************************";
+	protected List<PlaylistError> errors;
+	protected List<String> contents;
+	protected String type;
+	protected String url;
+	private static final Logger logger = LogManager.getLogger();
+
+	// have each playlist print its own report
+	public abstract void printReport(boolean tab);
+
+	/**
+	 * Constructor used by subclass to set up url
+	 * 
+	 * @param url
+	 */
+	public Playlist(String url) {
+		this.url = url;
+		errors = new ArrayList<PlaylistError>();
+	}
+
+	/**
+	 * simpleReport() Prints the general details of the report along with errors
+	 * found
+	 * 
+	 * @param tab
+	 *            true - add in a tab character to variants false - continue as
+	 *            normal
+	 */
+	public void simpleReport(boolean tab) {
+		logger.debug(">>simpleReport() playlist");
+		String tabStr = "";
+		if (tab) {
+			tabStr = "\t";
+			logger.debug("DEBUG - Setting a tab so we are currently processing a master");
+		}
+		System.out.println("\n" + tabStr + seperator + "\n");
+		System.out.println(tabStr + url);
+		System.out.println(tabStr + type);
+		if (errors.size() > 0) {
+			System.out.println(tabStr + "[FAIL] - " + errors.size() + " errors found\n");
+			for (PlaylistError error : errors) {
+				System.out.println(
+						tabStr + "["+error.getType() + "] Line " + error.getLineNumber() + " ---- Description : " + error.getDescription());
+			}
+		} else {
+			System.out.println(tabStr + "[Validated]");
+		}
+
+		logger.debug("<<simpleReport() playlist");
+	}
+	
+	/**
+	 * accept() Accepts a visitor to verify the contents of the playlist
+	 * @param visitor
+	 */
+	public void accept(HLSVisitor visitor) {
+		//visitor will verify the variants
+		if(type.equals("MASTER")) {
+			visitor.visitMaster((MasterPlaylist) this); 
+		} else {
+			visitor.visitMedia((MediaPlaylist) this);
+		}
+
+	}
+
+	/**
+	 * getUrl() Retrieve the url of the playlist
+	 * 
+	 * @return
+	 */
+	public String getUrl() {
+		return url;
+	}
+
+	/**
+	 * setUrl() Set the url of the playlist
+	 * 
+	 * @param url
+	 */
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	/**
+	 * getType() Retrieve the type of playlist (MASTER/MEDIA) Each child will set
+	 * itself
+	 * 
+	 * @return
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * getContent() Retrieve the content of the playlist file
+	 * 
+	 * @return
+	 */
+	public List<String> getContent() {
+		return contents;
+	}
+
+	/**
+	 * addError() Add any errors associated with the playlist file
+	 * 
+	 * @param error
+	 *            An object representing an error found
+	 */
+	public void addError(PlaylistError error) {
+		errors.add(error);
+	}
+
+	/**
+	 * getErrors() Retrieve any errors found while validating
+	 * 
+	 * @return
+	 */
+	public List<PlaylistError> getErrors() {
+		return errors;
+	}
+
+}

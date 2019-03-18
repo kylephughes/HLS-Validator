@@ -1,0 +1,67 @@
+package edu.psgv.sweng861;
+
+import java.util.List;
+
+public class DurationVisitor extends HLSVisitor {
+
+	/**
+	 * visitMedia() visit each simple playlist, checking to make sure each duration
+	 * is less than or equal to the target duration. Reports any errors with the playlist
+	 */
+	@Override
+	public void visitMedia(MediaPlaylist pl) {
+		// make sure the playlist has a valid first line
+		//to do another time
+		double targetDuration=0;
+		logger.debug(">>visit duration()");
+		List<String> contents = pl.getContent();
+		//loop over each line
+		int lineCount =0;
+		for(String line : contents) {
+			//keep track of which line we are on
+			lineCount++;
+			if(line.contains("#EXT-X-TARGETDURATION")) {
+				String[] split = line.split(":");
+				if(split.length == 2) {
+					targetDuration= Double.parseDouble(split[1]);
+					logger.info("The target duration " + targetDuration);
+				}
+			} else if(line.contains("#EXTINF")) {
+				String[] infSplit = line.split(":");
+				if(infSplit[1].contains(",")) {
+					String[] durationSplit = infSplit[1].split(",");
+					double duration = Double.parseDouble(durationSplit[0]);
+					logger.info("A duration found " + duration);
+				
+					if(targetDuration > 0 && duration > targetDuration) {
+						PlaylistError error = new PlaylistError(lineCount,"Duration Exceeds max duration");
+						pl.addError(error);
+					}				
+				}
+			}
+		}
+		
+		if(targetDuration == 0) {
+			logger.debug("ERROR : No target duration found for " + pl.getUrl());
+			PlaylistError error = new PlaylistError(0,"No TargetDuration Found,unable to process durations");
+			pl.addError(error);
+		}
+		logger.debug("<<visit duration()");
+	}
+
+	/**
+	 * visitMaster() Masters do not have durations pass off to media for the variants
+	 */
+	@Override
+	public void visitMaster(MasterPlaylist pl) {
+		// make sure the playlist has a valid first line
+		logger.debug(">>visit duration master()");
+		//verify the variants only 
+		for(MediaPlaylist media : pl.getVariants()) {
+			visitMedia(media);
+		}
+		logger.debug("<<visit duration master()");
+	}
+
+
+}

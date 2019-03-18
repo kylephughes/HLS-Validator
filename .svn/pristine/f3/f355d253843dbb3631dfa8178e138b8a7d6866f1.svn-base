@@ -1,0 +1,77 @@
+package edu.psgv.sweng861;
+
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+/**
+ * This class represents a factory and is responsible for creating 
+ * 	3 kind of objects {Media,Master,PlayListError}
+ * 
+ *  @author Kyle Hughes
+ */
+public class PlaylistFactory {
+	private static PlaylistFactory instance;
+	private static final Logger logger = LogManager.getLogger();
+
+	/**
+	 * getInstance() allows the class to be used as a singleton
+	 * @return
+	 */
+	public static PlaylistFactory getInstance() {
+		logger.debug(">>getInstance() ");
+
+		if (instance == null) {
+			logger.debug("<<getInstance() a new object created");
+			return new PlaylistFactory();
+		} else {
+			logger.debug("<<getInstance() existing object used");
+			return instance;
+		}
+	}
+
+	/**
+	 * create() create the correct object based on the contents of the playlist file
+	 * @param url the url we are processing
+	 * @param contents the contents of the playlist gathered from url
+	 * @return the correct playlist
+	 */
+	public Playlist create(String url, List<String> contents) {
+		logger.debug(">>create() ");
+
+		Playlist pl = null;
+		String type = "";
+		for (String c : contents) {
+			if (c.contains("EXT-X-STREAM-INF")) {
+				type = "MASTER";
+			} else if (c.contains("EXTINF")) {
+				type = "MEDIA";
+			}
+		}
+
+		if (type.equals("MASTER")) {
+			pl = new MasterPlaylist(contents,url);
+			logger.info("Created a master playlist with " +url);
+		} else if (type.equals("MEDIA")) {
+			pl = new MediaPlaylist(contents,url);
+			logger.info("Created a media playlist with " +url);
+		}
+		logger.debug("<<create() ");
+		return pl;
+	}
+
+	/**
+	 * getErrorObj() Returns a simple error based on the line and description
+	 * @param line line the error was found
+	 * @param description type of error to display
+	 * @return
+	 */
+	public PlaylistError getErrorObj(int line, String description) {
+		logger.debug(">>getErrorObj() ");
+		PlaylistError pe = new PlaylistError(line, description);
+		logger.debug("<<getInstance() ");
+		return pe;
+	}
+
+}

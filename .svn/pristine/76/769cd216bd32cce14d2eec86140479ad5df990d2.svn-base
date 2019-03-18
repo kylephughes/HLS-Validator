@@ -1,0 +1,84 @@
+package edu.psgv.sweng861;
+
+import java.util.List;
+
+/**
+ * Duration Visitor - Validate the playlist contents to ensure the duration of media playlists is not greater than 
+ * the target duration. Save any errors found against the playlist
+ * 
+ *
+ */
+public class DurationVisitor extends HLSVisitor {
+
+	/**
+	 * visitMedia() visit each simple playlist, checking to make sure each duration
+	 * is less than or equal to the target duration. Reports any errors with the playlist
+	 */
+	@Override
+	public void visitMedia(MediaPlaylist pl) {
+		// make sure the playlist has a valid first line
+		//to do another time
+		double targetDuration=0;
+		logger.debug(">>visit duration()");
+		List<String> contents = pl.getContent();
+		//loop over each line
+		int lineCount =0;
+		for(String line : contents) {
+			//keep track of which line we are on
+			lineCount++;
+			if(line.contains("#EXT-X-TARGETDURATION") && targetDuration > 0) {
+				PlaylistError error = new PlaylistError(lineCount,"More than one target duration found, using the first one");
+				pl.addError(error);
+			}else if(line.contains("#EXT-X-TARGETDURATION")) {
+				String[] split = line.split(":");
+				if(split.length == 2) {
+					targetDuration= Double.parseDouble(split[1]);
+					logger.info("The target duration " + targetDuration);
+				} else {
+					//values should be after :
+					PlaylistError error = new PlaylistError(lineCount,"Tag exists, but no value found,unable to process durations");
+					pl.addError(error);
+				}
+			} else if(line.contains("#EXTINF")) {
+				String[] infSplit = line.split(":");
+				if(infSplit.length == 2 && infSplit[1].contains(",")) {
+					String[] durationSplit = infSplit[1].split(",");
+					double duration = Double.parseDouble(durationSplit[0]);
+					logger.info("A duration found " + duration);
+				
+					if(targetDuration > 0 && duration > targetDuration) {
+						PlaylistError error = new PlaylistError(lineCount,"Duration exceeds target duration");
+						pl.addError(error);
+					}				
+				} else {
+					PlaylistError error = new PlaylistError(lineCount,"EXTINF is not formatted properly, can not compare to target duration");
+					pl.addError(error);
+				}
+					
+			}
+		}
+		
+		if(targetDuration == 0) {
+			logger.error("ERROR : No target duration found for " + pl.getUrl());
+			PlaylistError error = new PlaylistError(0,"No TargetDuration Found,unable to process durations");
+			pl.addError(error);
+		}
+		logger.debug("<<visit duration()");
+	}
+
+	/**
+	 * visitMaster() Masters do not have durations pass off to media for the variants
+	 */
+	@Override
+	public void visitMaster(MasterPlaylist pl) {
+		// make sure the playlist has a valid first line
+		logger.debug(">>visit duration master()");
+		//verify the variants only 
+		for(MediaPlaylist media : pl.getVariants()) {
+			visitMedia(media);
+		}
+		logger.debug("<<visit duration master()");
+	}
+
+
+}

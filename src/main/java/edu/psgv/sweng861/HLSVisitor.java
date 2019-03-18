@@ -1,0 +1,17 @@
+package edu.psgv.sweng861;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+/**
+ * HLSVisitor A base class used to allow the use of the visitor pattern
+ * @author Kyle Hughes
+ *
+ */
+public abstract class HLSVisitor {
+	protected static PlaylistFactory factory = PlaylistFactory.getInstance();
+	protected static final Logger logger = LogManager.getLogger();
+
+	public abstract void visitMedia (MediaPlaylist pl);
+	public abstract void visitMaster(MasterPlaylist pl);
+	
+}

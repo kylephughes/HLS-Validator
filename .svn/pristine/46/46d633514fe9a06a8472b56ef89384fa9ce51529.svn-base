@@ -1,0 +1,71 @@
+package edu.psgv.sweng861;
+
+import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+/**
+ * This class models a master playlist containing multiple media playlist
+ * 
+ * @author Kyle Hughes
+ */
+public class MasterPlaylist extends Playlist {
+	private List<MediaPlaylist> variants;
+	private int variantErrorCnt;
+	private static final Logger logger = LogManager.getLogger();
+
+	/**
+	 * Constructor for creating a master playlist, defers variants for later
+	 * 
+	 * @param contents
+	 * @param url
+	 */
+	public MasterPlaylist(List<String> contents, String url,List<MediaPlaylist> variants) {
+		super(url);
+		variantErrorCnt = 0;
+		// variants are created in factory
+		this.variants = variants;
+		this.contents = contents;
+		type = "MASTER";
+	}
+
+	/**
+	 * getVariants() Retrieve the saved variants
+	 * 
+	 * @return
+	 */
+	public List<MediaPlaylist> getVariants() {
+		logger.debug(">>addVariant() MasterPlaylist");
+		logger.debug("Variant size " + variants.size());
+		logger.debug("<<addVariant() MasterPlaylist");
+		return variants;
+	}
+
+	/**
+	 * printReport() Use parent class and then add each variant to console
+	 * 
+	 * @param tab
+	 *            determine if a tab should be added for readability
+	 */
+	@Override
+	public void printReport(boolean tab) {
+		logger.debug(">>printReport() MasterPlaylist");
+		// make the master tabbed to left and variants tabbed in one
+
+		// if a variant fails, then the master should not be validated
+		//v3 needs to be updated 
+		if (variantErrorCnt > 0) {
+			PlaylistError error = new PlaylistError(0, variantErrorCnt + " variant(s) failed");
+			this.errors.add(error);
+		}
+		simpleReport(false);
+		if (variants.size() > 0) {
+			System.out.println("\n" + variants.size() + " variants found\n");
+			for (MediaPlaylist media : variants) {
+				media.printReport(true);
+			}
+		}
+		logger.debug("<<printReport() MasterPlaylist");
+
+	}
+}

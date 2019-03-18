@@ -1,0 +1,464 @@
+10:07:07.954 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+10:07:07.961 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+10:07:18.057 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+10:07:18.058 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:07:18.059 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+10:07:18.072 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:07:18.299 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+10:07:18.302 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+10:07:18.304 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+10:07:18.304 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+10:07:18.304 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+10:07:18.305 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:07:18.309 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+10:07:18.310 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:07:18.310 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+10:10:31.986 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+10:10:31.993 [main] ERROR edu.psgv.sweng861.HLS1 - <<main()
+10:12:02.993 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+10:12:03.004 [main] ERROR edu.psgv.sweng861.HLS1 - <<main()
+10:13:01.287 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+10:13:01.293 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed [Ljava.lang.String;@64729b1e
+10:13:44.021 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+10:13:44.027 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed C:\Users\Kyle\SWConstruction\HLS1(kxh413)/batchMode.txt
+10:47:35.956 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+10:47:35.972 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+10:47:56.939 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+10:47:56.939 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:47:56.939 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+10:47:56.939 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:47:57.439 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+10:47:57.456 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+10:47:57.456 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+10:47:57.456 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+10:47:57.456 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+10:47:57.456 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+10:47:57.456 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:47:57.456 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+10:47:57.456 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+10:47:57.456 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+10:48:18.981 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+10:48:18.981 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+10:48:18.981 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+10:48:18.981 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+10:48:19.450 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+10:48:19.460 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+10:48:19.461 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+10:48:19.461 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+10:48:19.461 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+10:48:19.461 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+10:48:19.462 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+10:48:19.462 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+10:48:19.462 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+10:48:19.462 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+10:59:34.071 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+10:59:34.071 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+10:59:39.001 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+10:59:39.001 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} gear1/prog_index.m3u8
+10:59:39.001 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+10:59:39.001 [main] INFO  edu.psgv.sweng861.HLS1 - URL is invalid - java.net.MalformedURLException: no protocol: gear1/prog_index.m3u8
+10:59:39.014 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+10:59:39.014 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} gear1/prog_index.m3u8
+10:59:39.015 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:00:24.149 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:00:24.149 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/
+11:00:24.150 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:00:24.151 [main] INFO  edu.psgv.sweng861.HLS1 - File extension is not m3u8
+11:00:24.151 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:00:24.151 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/
+11:00:24.151 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:00:45.521 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:00:45.521 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/test.m3u8
+11:00:45.521 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:00:45.543 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/test.m3u8
+11:00:48.280 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:00:48.280 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:00:48.280 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:00:48.280 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/test.m3u8
+11:00:48.295 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:09:39.122 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:09:39.122 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:39.122 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:09:39.122 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:39.400 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:09:39.406 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:09:39.406 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:09:39.407 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:09:39.407 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:09:39.408 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:09:39.408 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:39.410 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:09:39.410 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:39.411 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:09:55.375 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:09:55.375 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} 
+11:09:55.375 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:09:55.375 [main] INFO  edu.psgv.sweng861.HLS1 - File extension is not m3u8
+11:09:55.383 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:09:55.383 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} 
+11:09:55.383 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:09:57.726 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:09:57.726 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:57.726 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:09:57.726 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:57.896 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:09:57.896 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:09:57.896 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, , #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:09:57.896 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:09:57.896 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:09:57.896 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:09:57.896 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:57.903 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:09:57.903 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:09:57.904 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:10:12.845 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:10:12.845 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:10:12.845 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:10:12.845 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:10:13.029 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:10:13.029 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:10:13.029 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXT, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:10:13.029 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:10:13.029 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned false, does not start with #EXTM3U
+11:10:13.029 [main] INFO  edu.psgv.sweng861.HLS1 - Playlist file can not be validated {} -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:10:13.036 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:10:13.036 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:10:25.559 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:10:25.559 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u
+11:10:25.559 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:10:25.559 [main] INFO  edu.psgv.sweng861.HLS1 - File extension is not m3u8
+11:10:25.559 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:10:25.567 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u
+11:10:25.567 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:10:37.670 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:10:37.670 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-eror/playlist.m3u8
+11:10:37.670 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:10:37.670 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-eror/playlist.m3u8
+11:10:37.822 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:10:37.822 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:10:37.822 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:10:37.822 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-eror/playlist.m3u8
+11:10:37.830 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:10:51.120 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:10:51.120 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http:/gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:10:51.136 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:10:51.136 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http:/gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:10:51.138 [main] INFO  edu.psgv.sweng861.HLS1 - Something went wrong reading playlist java.lang.IllegalArgumentException: protocol = http host = null
+11:10:51.138 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:10:51.139 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http:/gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:10:51.139 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:12:06.368 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:12:06.368 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/s/simple-01-first-record-error/playlist.m3u8
+11:12:06.368 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:12:06.368 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/s/simple-01-first-record-error/playlist.m3u8
+11:12:06.831 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:12:06.831 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:12:06.831 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:12:06.831 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/s/simple-01-first-record-error/playlist.m3u8
+11:12:06.839 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:12:23.727 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:12:23.727 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:12:23.727 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:12:23.727 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:12:23.827 [main] INFO  edu.psgv.sweng861.HLS1 - URL could not be reached -java.net.UnknownHostException: gv8748.gv.edu
+11:12:23.832 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:12:23.832 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:12:23.832 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:13:18.534 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:13:18.534 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlit.m3u8
+11:13:18.534 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:13:18.534 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlit.m3u8
+11:13:18.697 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:13:18.697 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:13:18.697 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:13:18.697 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlit.m3u8
+11:13:18.709 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:13:31.031 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:13:31.031 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:13:31.031 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:13:31.031 [main] INFO  edu.psgv.sweng861.HLS1 - URL is invalid - java.net.MalformedURLException: unknown protocol: gv8748.gv.psu.edu
+11:13:31.031 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:13:31.031 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:13:31.031 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:15:37.306 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:15:37.322 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+11:15:40.221 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:15:40.221 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:15:40.221 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:15:40.237 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:15:40.475 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:15:40.475 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:15:40.475 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXT, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:15:40.475 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:15:40.475 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned false, does not start with #EXTM3U
+11:15:40.475 [main] INFO  edu.psgv.sweng861.HLS1 - Playlist file can not be validated {} -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:15:40.482 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:15:40.482 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:15:51.860 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:15:51.860 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:15:51.860 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:15:51.860 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:15:52.044 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:15:52.044 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:15:52.044 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:15:52.044 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:15:52.044 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:15:52.044 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:15:52.044 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:15:52.052 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:15:52.053 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:15:52.053 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:16:48.130 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:16:48.130 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} erfge
+11:16:48.131 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:16:48.131 [main] INFO  edu.psgv.sweng861.HLS1 - File extension is not m3u8
+11:16:48.132 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:16:48.132 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} erfge
+11:16:48.132 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:17:02.131 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:17:02.131 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:808/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:17:02.131 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:17:02.131 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:808/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:17:23.592 [main] INFO  edu.psgv.sweng861.HLS1 - URL could not be reached -java.net.ConnectException: Connection timed out: connect
+11:17:23.594 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:17:23.594 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:808/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:17:23.594 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:19:18.614 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:19:18.614 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+11:19:30.989 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:19:30.989 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:808/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:19:30.989 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:19:31.014 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:808/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:19:36.031 [main] INFO  edu.psgv.sweng861.HLS1 - URL could not be reached -java.net.SocketTimeoutException: connect timed out
+11:19:36.034 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:19:36.034 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:808/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:19:36.034 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:20:02.062 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:20:02.062 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:20:02.062 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:20:02.062 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:20:02.294 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:20:02.297 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:20:02.298 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:20:02.298 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:20:02.298 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:20:02.298 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:20:02.298 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:20:02.299 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:20:02.299 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:20:02.299 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:21:17.989 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:21:17.989 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in
+11:22:54.989 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:22:55.004 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in
+11:23:12.858 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:23:12.858 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in
+11:24:00.941 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:24:00.941 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in
+11:24:44.823 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:24:44.823 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in
+11:25:14.393 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:25:14.409 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+11:25:17.076 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:25:17.076 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:25:17.076 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:25:17.092 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:25:17.308 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:25:17.308 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:25:17.308 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:25:17.308 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:25:17.308 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:25:17.308 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:25:17.308 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:25:17.313 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:25:17.313 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:25:17.314 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:25:27.482 [main] DEBUG edu.psgv.sweng861.HLS1 - <<main()
+11:25:49.960 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:25:49.976 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in
+11:27:14.654 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:27:14.670 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in C:\Users\Kyle\SWConstruction\HLS1(kxh413)/batchMode.txt
+11:28:10.671 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:28:10.671 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in C:\Users\Kyle\SWConstruction\HLS1(kxh413)\batchMode.txt
+11:29:25.161 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:29:25.161 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in C:\Users\Kyle\SWConstruction\HLS12
+11:30:22.958 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:30:22.964 [main] INFO  edu.psgv.sweng861.HLS1 - More than one argument passed in C:\Users\Kyle\SWConstruction\HLS12
+11:33:24.293 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:33:24.293 [main] INFO  edu.psgv.sweng861.HLS1 - Batch mode activated
+11:33:24.293 [main] DEBUG edu.psgv.sweng861.HLS1 - >>parseBatchFile()
+11:33:24.304 [main] DEBUG edu.psgv.sweng861.HLS1 - <<parseBatchFile()
+11:33:24.304 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:33:24.304 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:33:24.304 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:33:24.304 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:33:24.509 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:33:24.524 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:33:24.524 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:33:24.524 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:33:24.524 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:33:24.524 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:33:24.524 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:33:24.524 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:33:24.524 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:33:24.524 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:33:24.524 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:33:24.524 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:33:24.609 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:33:24.609 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:33:24.609 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:33:24.609 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:33:24.609 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:33:24.609 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:33:24.609 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:33:24.609 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:33:24.609 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:33:24.609 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:33:24.609 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:33:24.609 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:33:24.709 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:33:24.709 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:33:24.709 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXT, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:33:24.709 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:33:24.709 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned false, does not start with #EXTM3U
+11:33:24.709 [main] INFO  edu.psgv.sweng861.HLS1 - Playlist file can not be validated {} -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:33:24.709 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:33:24.709 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:35:24.980 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:35:24.996 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+11:35:48.208 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:35:48.208 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:35:48.208 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:35:48.224 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:35:48.951 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:35:48.951 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:35:48.951 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXT, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:35:48.951 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:35:48.951 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned false, does not start with #EXTM3U
+11:35:48.965 [main] INFO  edu.psgv.sweng861.HLS1 - Playlist file can not be validated {} -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:35:48.965 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:35:48.965 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:35:55.669 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:35:55.669 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} https://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:35:55.669 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:35:56.671 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- https://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:35:57.419 [main] INFO  edu.psgv.sweng861.HLS1 - URL could not be reached -javax.net.ssl.SSLException: Unrecognized SSL message, plaintext connection?
+11:35:57.425 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:35:57.425 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} https://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:35:57.426 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:38:44.346 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:38:44.346 [main] INFO  edu.psgv.sweng861.HLS1 - Batch mode activated
+11:38:44.346 [main] DEBUG edu.psgv.sweng861.HLS1 - >>parseBatchFile()
+11:38:44.361 [main] DEBUG edu.psgv.sweng861.HLS1 - <<parseBatchFile()
+11:38:44.361 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:38:44.361 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/weng861/simple-01/playlist.m3u8
+11:38:44.361 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:38:44.361 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/weng861/simple-01/playlist.m3u8
+11:38:44.862 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:38:44.862 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:38:44.862 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:38:44.862 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/weng861/simple-01/playlist.m3u8
+11:38:44.878 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/seng861/master-01/bipbop_4x3_variant.m3u8
+11:38:44.878 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:38:44.878 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/seng861/master-01/bipbop_4x3_variant.m3u8
+11:38:45.063 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:38:45.063 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:38:45.063 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:38:45.063 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/seng861/master-01/bipbop_4x3_variant.m3u8
+11:38:45.063 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:38:45.063 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:38:45.063 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:38:45.263 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:38:45.279 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:38:45.279 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXT, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:38:45.279 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:38:45.279 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned false, does not start with #EXTM3U
+11:38:45.279 [main] INFO  edu.psgv.sweng861.HLS1 - Playlist file can not be validated {} -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:38:45.279 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:38:45.279 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:57:37.960 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:57:37.960 [main] INFO  edu.psgv.sweng861.HLS1 - Batch mode activated
+11:57:37.960 [main] DEBUG edu.psgv.sweng861.HLS1 - >>parseBatchFile()
+11:57:37.976 [main] DEBUG edu.psgv.sweng861.HLS1 - <<parseBatchFile()
+11:57:37.976 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:57:37.977 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/weng861/simple-01/playlist.m3u8
+11:57:37.977 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:57:37.982 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/weng861/simple-01/playlist.m3u8
+11:57:38.498 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:57:38.498 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:57:38.498 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:57:38.498 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/weng861/simple-01/playlist.m3u8
+11:57:38.498 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/seng861/master-01/bipbop_4x3_variant.m3u8
+11:57:38.498 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:57:38.498 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/seng861/master-01/bipbop_4x3_variant.m3u8
+11:57:38.678 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 404
+11:57:38.678 [main] DEBUG edu.psgv.sweng861.HLS1 - Invalid response code{} 404
+11:57:38.679 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist []
+11:57:38.679 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/seng861/master-01/bipbop_4x3_variant.m3u8
+11:57:38.679 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:38.680 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:57:38.680 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:38.846 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:57:38.862 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:57:38.862 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXT, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:57:38.862 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:57:38.862 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned false, does not start with #EXTM3U
+11:57:38.862 [main] INFO  edu.psgv.sweng861.HLS1 - Playlist file can not be validated {} -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:38.862 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:38.862 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:57:56.576 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:57:56.576 [main] INFO  edu.psgv.sweng861.HLS1 - Batch mode activated
+11:57:56.576 [main] DEBUG edu.psgv.sweng861.HLS1 - >>parseBatchFile()
+11:57:56.586 [main] DEBUG edu.psgv.sweng861.HLS1 - <<parseBatchFile()
+11:57:56.587 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:57:56.587 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:57:56.587 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:57:56.587 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:57:56.807 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:57:56.807 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:57:56.807 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:57:56.807 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:57:56.807 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:57:56.807 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:57:56.807 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:57:56.823 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:57:56.823 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01/playlist.m3u8
+11:57:56.823 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:57:56.823 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:57:56.823 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:57:56.908 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:57:56.908 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:57:56.908 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:57:56.908 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:57:56.908 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:57:56.908 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:57:56.908 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:57:56.908 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:57:56.908 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:57:56.908 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:56.908 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:57:56.908 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:56.992 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:57:56.992 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:57:56.992 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXT, #EXT-X-MEDIA-SEQUENCE:1, #EXT-X-TARGETDURATION:10, #EXT-X-ALLOW-CACHE:YES, #EXTINF:10,, 130130211307_1.ts, #EXTINF:10,, 130130211307_2.ts, #EXTINF:10,, 130130211307_3.ts, #EXTINF:10,, 130130211307_4.ts, #EXTINF:10,, 130130211307_5.ts, #EXTINF:10,, 130130211307_6.ts, #EXTINF:10,, 130130211307_7.ts, #EXTINF:10,, 130130211307_8.ts, #EXTINF:10,, 130130211307_9.ts, #EXTINF:10,, 130130211307_10.ts, #EXTINF:10,, 130130211307_11.ts, #EXTINF:10,, 130130211307_12.ts, #EXTINF:10,, 130130211307_13.ts, #EXTINF:10,, 130130211307_14.ts, #EXTINF:10,, 130130211307_15.ts, #EXTINF:10,, 130130211307_16.ts, #EXTINF:10,, 130130211307_17.ts, #EXTINF:10,, 130130211307_18.ts, #EXTINF:10,, 130130211307_19.ts, #EXT-X-ENDLIST]
+11:57:56.992 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:57:56.992 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned false, does not start with #EXTM3U
+11:57:56.992 [main] INFO  edu.psgv.sweng861.HLS1 - Playlist file can not be validated {} -- http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:56.992 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/simple-01-first-record-error/playlist.m3u8
+11:57:56.992 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()
+11:58:44.095 [main] DEBUG edu.psgv.sweng861.HLS1 - >>main()
+11:58:44.111 [main] INFO  edu.psgv.sweng861.HLS1 - Interactive mode activated
+11:59:05.267 [main] DEBUG edu.psgv.sweng861.HLS1 - >>processPlaylists()
+11:59:05.267 [main] INFO  edu.psgv.sweng861.HLS1 - Begin Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:59:05.267 [main] DEBUG edu.psgv.sweng861.HLS1 - >>readPlaylist()
+11:59:05.288 [main] INFO  edu.psgv.sweng861.HLS1 - Making HTTP GET Request to -- http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:59:05.489 [main] INFO  edu.psgv.sweng861.HLS1 - HTTP Request returned response code -- 200
+11:59:05.489 [main] DEBUG edu.psgv.sweng861.HLS1 - <<readPlaylist()
+11:59:05.489 [main] DEBUG edu.psgv.sweng861.HLS1 - Contents found in playlist [#EXTM3U, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=232370,CODECS="mp4a.40.2, avc1.4d4015", gear1/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=649879,CODECS="mp4a.40.2, avc1.4d401e", gear2/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=991714,CODECS="mp4a.40.2, avc1.4d401e", gear3/prog_index.m3u8, #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1927833,CODECS="mp4a.40.2, avc1.4d401f", gear4/prog_index.m3u8]
+11:59:05.489 [main] DEBUG edu.psgv.sweng861.HLS1 - >>validateContents()
+11:59:05.489 [main] INFO  edu.psgv.sweng861.HLS1 - <<validateContents() returned true validated
+11:59:05.489 [main] DEBUG edu.psgv.sweng861.HLS1 - >>printContents()
+11:59:05.489 [main] INFO  edu.psgv.sweng861.HLS1 - Printing contents for filename{}http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:59:05.498 [main] DEBUG edu.psgv.sweng861.HLS1 - <<printContents()
+11:59:05.499 [main] DEBUG edu.psgv.sweng861.HLS1 - Finish Processing of {} http://gv8748.gv.psu.edu:8084/sweng861/master-01/bipbop_4x3_variant.m3u8
+11:59:05.499 [main] DEBUG edu.psgv.sweng861.HLS1 - <<processPlaylists()

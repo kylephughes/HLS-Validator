@@ -1,0 +1,101 @@
+package edu.psgv.sweng861;
+
+import java.util.List;
+
+public class TagUriVisitor extends HLSVisitor{
+	private static enum StreamType {EXTINF, EXTXSTREAMINF};
+	/**
+	 * visitMedia() Verify each
+	 */
+	@Override
+	public void visitMedia(MediaPlaylist pl) {
+		StreamType type = StreamType.EXTINF;
+		boolean nextLine = false;
+		List<String> contents = pl.getContent();
+		int lineCount = 0;
+		for(String line : contents) {
+			lineCount++;
+			if(nextLine) {
+				verifyNextLine(type,line,pl,lineCount);
+				//reset for next 
+				nextLine=false;
+			} else {
+				//check for tags
+				if(line.startsWith("#EXTINF")) {
+					nextLine = true;
+				} else if(line.startsWith("#EXT-X-STREAM-INF")){				
+					PlaylistError error = PlaylistFactory.getErrorObj(ErrorType.MINOR,lineCount,
+							"Found - #EXT-X-STREAM-INF, this tag must not be in a media playlist");
+					pl.addError(error);
+					//will check for a variant stream in the nextLine, even if its a simple playlist
+					type = StreamType.EXTXSTREAMINF;
+					nextLine =true;
+				} else {
+					//skip, only worried about two types
+				}
+			}
+		}
+	}
+	
+	/**
+	 * verifyNextLine() Helper method to check the next line for both simple and master
+	 * 					playlists
+	 * @param stream the type(simple or master) 
+	 * @param line	the next line to verify
+	 * @param pl	the playlist currently processing
+	 * @param lineCount	the line in the file we are on
+	 */
+
+	private void verifyNextLine(StreamType stream, String line, Playlist pl, int lineCount) {
+		if(stream == StreamType.EXTINF) {
+			if(!line.endsWith(".ts")) {
+				PlaylistError error = PlaylistFactory.getErrorObj(ErrorType.MAJOR,lineCount,"#EXTINF is not followed by a media segment URI");
+				pl.addError(error);
+			}
+		} else {
+			//only 2 types so assume its an variant stream
+			if(!line.endsWith(".m3u8")) {
+				PlaylistError error = PlaylistFactory.getErrorObj(ErrorType.MAJOR,lineCount,"#EXT-X-STREAM-INF is not followed by a variant stream URI");
+				pl.addError(error);
+			}
+		}
+		
+	}
+
+	/**
+	 * visitMaster() check the master playlist, verify it contains only variant streams
+	 */
+	@Override
+	public void visitMaster(MasterPlaylist pl) {
+		StreamType type = StreamType.EXTXSTREAMINF;
+		boolean nextLine = false;
+		List<String> contents = pl.getContent();
+		int lineCount = 0;
+		for(String line : contents) {
+			lineCount++;
+			//previous line had an appropriate tag so check the URI
+			if(nextLine) {
+				verifyNextLine(type,line,pl,lineCount);
+				//reset for next 
+				nextLine=false;
+			} else {
+				//check for tags
+				if(line.startsWith("#EXT-X-STREAM-INF")) {
+					nextLine = true;
+					//   MUST reject Playlists that contain both Media Segment Tags and Master
+					 //  Playlist tags
+				} else if(line.startsWith("#EXTINF")){				
+					PlaylistError error = PlaylistFactory.getErrorObj(ErrorType.MINOR,lineCount,
+											"Found - #EXTINF, this tag must not be in a master playlist");
+					pl.addError(error);
+					
+					//will check for a variant stream in the nextLine, even if its a simple playlist
+					type = StreamType.EXTINF;
+					nextLine =true;
+				} else {
+					//skip, only worried about these two tags for this visitor
+				}
+			}
+		}	
+	}
+}

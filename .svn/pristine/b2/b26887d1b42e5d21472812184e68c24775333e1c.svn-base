@@ -1,0 +1,366 @@
+package edu.psgv.sweng861;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+/**
+ * This class demonstrates how to interactively read in a url from a user and
+ * validate it with the HLS protocol. Optionally enter in a filename for batch
+ * mode
+ *
+ * @author Kyle Hughes
+ */
+public class HLS2 {
+	private static final Logger logger = LogManager.getLogger();
+	private final static String VERSION = "v2.0";
+	private static final String seperator = "***********************************************************************";
+	// problem reading the url when processing
+	private static boolean readError = false;
+	//our object representations of playlists
+	private static List<Playlist> playListObjs;
+	private static PlaylistFactory factory = PlaylistFactory.getInstance();
+
+	/**
+	 * main() Allows users to enter playlist url's via the command line. The program
+	 * will validate the url and display the contents if valid. User may also pass
+	 * in an argument representing a filename to run in batch mode
+	 *
+	 * @param arg[0]
+	 *            path to the input text file for batch processing.
+	 */
+	public static void main(String[] args) {
+		logger.debug(">>main()");
+		boolean nextPlaylist = true;
+
+		System.out.println("Welcome to the HLS2 Validator " + VERSION + "\n");
+		// Assume the command line param is a file path
+		if (args.length == 1) {
+			playListObjs = new ArrayList<Playlist>();
+			logger.info("Batch mode activated");
+
+			List<String> playLists = parseBatchFile(args[0]);
+			if (playLists.size() > 0) {
+				processPlayLists(playLists);
+				printReport(playListObjs);
+			} else {
+				System.out.println("The File did not contain any playLists, please try again");
+			}
+		} else if (args.length < 1) {
+			// initialize for each seperate url in interactive mode
+			playListObjs = new ArrayList<Playlist>();
+			logger.info("Interactive mode activated");
+			// Interactive input
+			Scanner scanner = new Scanner(System.in);
+			while (nextPlaylist) {
+				System.out.println("\nPlease enter a Playlist URL to validate, type 'quit' to finish ");
+				String playListUrl = scanner.nextLine();
+				if (playListUrl.equals("quit")) {
+					System.out.println("Closing the validator");
+					scanner.close();
+					logger.debug("<<main()");
+					System.exit(1);
+				} else {
+					// reset for each input
+					readError = false;
+					playListObjs = new ArrayList<Playlist>();
+					// process interactive url
+					List<String> playlist = new ArrayList<>();
+					playlist.add(playListUrl);
+					processPlayLists(playlist);
+					printReport(playListObjs);
+				}
+			}
+			scanner.close();
+		}
+		if (args.length > 1) {
+			logger.error("More than one argument passed in ");
+			System.out.println("ALERT: Only one input parameter accepted. Exiting now...");
+		}
+	}
+
+	/**
+	 * processPlaylists() Whether in batch or interactive, coordinates the
+	 * processing of the playlist file(s) one by one
+	 *
+	 * @param playLists
+	 *            Playlist urls gathered from a file or entered by user
+	 */
+	private static void processPlayLists(List<String> playLists) {
+		logger.debug(">>processPlaylists()");
+
+		for (String pl : playLists) {
+			logger.info("Begin Processing of {} " + pl);
+			List<String> contents = readPlaylist(pl);
+			logger.debug("Contents found in playlist " + contents.toString());
+			if (contents.size() > 0) {
+				// create object representation and add contents to the object
+				Playlist newPlaylist = factory.create(pl, contents);
+
+				if (newPlaylist != null) {
+					playListObjs.add(newPlaylist);
+
+					if (newPlaylist.getType().equals("MASTER")) {
+						// process each variant
+						logger.info("Found a Master Playlist, processing the variants now");
+						processVariants((MasterPlaylist) newPlaylist);
+					}
+
+					// For Master playlists this will only run validation on the orginal master,
+					// the variants are ran through validation when they are created.
+					if (!readError) {
+						validateContents(newPlaylist);
+					} else {
+						// in batch mode it will continue if one url has an error
+						readError = false;
+					}
+				} else {
+					System.out.println("ALERT: " + pl + " unable to find any EXTINF or EXT-X-STREAM-INF tags");
+					logger.error("ERROR - " + pl + " does not contain valid tags");
+				}
+				logger.debug("Finish Processing of {} " + pl);
+			}
+		}
+		logger.debug("<<processPlaylists()");
+	}
+
+	/**
+	 * processVariants() Go through each variant url in the master playlist and
+	 * create a media object representation to add to the master.
+	 *
+	 * @param newPlaylist
+	 *            The master playlist we are processing
+	 */
+	private static void processVariants(MasterPlaylist newPlaylist) {
+		logger.debug(">>processVariants()");
+
+		List<String> content = newPlaylist.getContent();
+		String absoluteUrl = absolutizeUrl(newPlaylist.getUrl());
+		String variantUrl = "";
+		for (String c : content) {
+			// get all urls in the master
+			if (c.endsWith(".m3u8")) {
+				// append the variant
+				variantUrl = absoluteUrl + c;
+				List<String> variantContent = readPlaylist(variantUrl);
+				// Validate the variant to check for errors
+				if (!readError && variantContent.size() > 0) {
+					// master playlists only contain other media playlists so
+					// assumption is made
+					MediaPlaylist media = (MediaPlaylist) factory.create(variantUrl, variantContent);
+					logger.info("Validating the variant : " + variantUrl);
+					validateContents(media);
+					logger.info("Adding the variant : " + variantUrl + " to " + newPlaylist.getUrl());
+					newPlaylist.addVariant(media);
+				} else {
+					// in batch mode it will continue if one url has an error
+					readError = false;
+					logger.error("ERROR - A variant playlist was unable to be added due to a URL read error");
+				}
+			}
+		}
+		logger.debug("<<processVariants()");
+	}
+
+	/**
+	 * absolutizeUrl() Remove the end of the url used to get the variant playlists
+	 *
+	 * @param url
+	 * @return a string url without the previous filename
+	 */
+	private static String absolutizeUrl(String url) {
+		logger.debug(">>processVariants()");
+		int index = url.lastIndexOf("/");
+		String path = url.substring(0, index + 1);
+		logger.info("Absolutized path " + path);
+
+		logger.debug("<<processVariants()");
+		return path;
+
+	}
+
+	/**
+	 * readPlayList() Accesses the url passed in and returns a list of the contents
+	 * contained in the playList file if it is a valid url. Empty contents will
+	 * indicate the playlist was not able to be read
+	 *
+	 * @param pl
+	 * @return The List of contents contained in the playlist
+	 */
+	private static List<String> readPlaylist(String pl) {
+		logger.debug(">>readPlaylist()");
+		logger.info("The url to read " + pl);
+		URL url;
+		HttpURLConnection urlConnection;
+		List<String> contents = new ArrayList<>();
+		try {
+			// make sure url has valid playlist extension
+			if (!pl.endsWith(".m3u8")) {
+				readError = true;
+				System.out.println("Warning!! the file " + pl + " does not " + "indicate a playlist file. Skipping");
+				logger.info("File extension is not m3u8");
+				return contents;
+			}
+
+			// attempt to connect to url and retrieve the contents
+			url = new URL(pl);
+			urlConnection = (HttpURLConnection) url.openConnection();
+			urlConnection.setRequestMethod("GET");
+			// set timeout for connection to 8 seconds
+			urlConnection.setConnectTimeout(8 * 1000);
+			logger.info("Making HTTP GET Request to -- " + pl);
+
+			urlConnection.connect();
+
+			logger.info("HTTP Request returned response code -- " + urlConnection.getResponseCode());
+
+			// make sure we get an ok response from server
+			if (urlConnection.getResponseCode() != 200) {
+				logger.error("Invalid response code{} " + urlConnection.getResponseCode());
+				System.out.println("ERROR. The URL " + pl + " returned response code " + urlConnection.getResponseCode()
+						+ " and is not valid. Check the url. Processing was skipped");
+				readError = true;
+				return contents;
+			}
+
+			// make sure we get the proper content type
+			String contentType = urlConnection.getContentType().toUpperCase();
+			if (!contentType.contains("MPEGURL")) {
+				logger.error("Invalid content type {} " + contentType);
+				System.out.println(
+						"ERROR: The URL returned a bad response content type, please make sure the url is a playlist");
+				readError = true;
+				return contents;
+			}
+
+			// get the contents from the file
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+			String line = "";
+			while ((line = bufferedReader.readLine()) != null) {
+				// skip blank lines in files
+				if (line.equals("")) {
+					continue;
+				}
+				contents.add(line);
+			}
+			bufferedReader.close();
+
+		} catch (MalformedURLException e1) {
+			System.out.println("ERROR: The URL " + pl + " is invalid. Check the format of the url");
+			readError = true;
+			logger.info("URL is invalid - " + e1.toString());
+			return contents;
+		} catch (IOException e) {
+			System.out.println("ERROR: The URL " + pl + " could not be reached");
+			readError = true;
+			logger.info("URL could not be reached -" + e.toString());
+			return contents;
+		} catch (Exception e) {
+			System.out.println("ERROR: Something went wrong reading the URL " + pl);
+			readError = true;
+			logger.info("Something went wrong reading playlist " + e.toString());
+			return contents;
+		}
+		logger.debug("<<readPlaylist()");
+		return contents;
+	}
+
+	/**
+	 * parseBatchFile() accepts a String containing the path to a text file and
+	 * returns a list of URL Strings in the file
+	 *
+	 * @param filePath
+	 *            path to the input file.
+	 * @return string with all playlist urls in the file.
+	 */
+	private static List<String> parseBatchFile(String filePath) {
+		logger.debug(">>parseBatchFile()");
+		List<String> playLists = new ArrayList<>();
+		String line = "";
+		try {
+			// FileReader reads text files in the default encoding.
+			FileReader fileReader = new FileReader(filePath);
+			// Always wrap FileReader in BufferedReader.
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			while ((line = bufferedReader.readLine()) != null) {
+				playLists.add(line);
+			}
+			// Always close files.
+			bufferedReader.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Unable to open file '" + filePath + "'. Exiting now");
+			logger.info("Unable to open file {} --" + filePath + " -- " + ex.toString());
+			System.exit(2);
+		} catch (IOException ex) {
+			System.out.println("Error reading file '" + filePath + "'. Exiting now");
+			logger.info("Unable to read file {} --" + filePath + " -- " + ex.toString());
+			System.exit(3);
+		}
+		logger.debug("<<parseBatchFile()");
+		return playLists;
+	}
+
+	/**
+	 * validateContents() validates the playList starts with #EXTM3U and will create
+	 * a new error to associate with the playlist
+	 *
+	 * @param pl
+	 */
+	private static void validateContents(Playlist pl) {
+		logger.debug(">>validateContents()");
+		List<String> contents = pl.getContent();
+
+		if (contents.size() < 1) {
+			pl.addError(factory.getErrorObj(0, "Problem reading the contents of the URL, it was skipped"));
+
+			logger.error("<<validateContents()  no contents found");
+		} else if (contents.size() > 0) {
+			// validation for v1.0-2.0, gets first line in playlist
+			if (contents.get(0).equals("#EXTM3U")) {
+				logger.info("<<validateContents() returned true validated");
+			} else {
+				// create new error obj to add onto the playlist
+				pl.addError(factory.getErrorObj(1, "Playlist does not start with #EXTM3U"));
+				logger.info("<<validateContents() returned false, does not start with #EXTM3U");
+			}
+		}
+		logger.debug("<<validateContents()");
+	}
+
+	/**
+	 * printContents() Print all of the playlists along with the any variants found
+	 * Master playlists will tab variants to distinguish. In batch mode, new
+	 * playlists in the text file are seperated by double seperators
+	 *
+	 * @param contents
+	 *            list of contents contained in playlist file
+	 * @param fileName
+	 *            the playlist file to print
+	 */
+	private static void printReport(List<Playlist> playLists) {
+		logger.debug(">>printContents()");
+		if (playLists != null && playLists.size() > 0) {
+			System.out.println("\n\t\t\t------New Playlist Report --------\n");
+			for (Playlist pl : playLists) {
+				// the master will set this true if it ever gets set
+				pl.printReport(false);
+				System.out.println("\n" + seperator);
+			}
+		} else {
+			logger.error("Something went wrong, no playlists to print");
+		}
+		logger.debug("<<printContents()");
+	}
+
+}

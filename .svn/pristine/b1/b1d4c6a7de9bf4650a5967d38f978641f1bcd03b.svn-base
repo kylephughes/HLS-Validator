@@ -1,0 +1,174 @@
+package edu.psgv.sweng861;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Utilities {
+	private static boolean readError = false;
+	private static final Logger logger = LogManager.getLogger();
+
+	/**
+	 * readPlayList() Accesses the url passed in and returns a list of the contents
+	 * contained in the playList file if it is a valid url. Empty contents will
+	 * indicate the playlist was not able to be read
+	 *
+	 * @param pl
+	 * @return The List of contents contained in the playlist
+	 */
+	public static List<String> readPlaylist(String pl) {
+		logger.debug(">>readPlaylist()");
+		logger.info("The url to read " + pl);
+		setReadError(false);
+		URL url;
+		HttpURLConnection urlConnection;
+		List<String> contents = new ArrayList<>();
+		try {
+			// make sure url has valid playlist extension
+			if (!pl.endsWith(".m3u8")) {
+				setReadError(true);
+				System.out.println("Warning!! the file " + pl + " does not " + "indicate a playlist file. Skipping");
+				logger.info("File extension is not m3u8");
+				return contents;
+			}
+
+			// attempt to connect to url and retrieve the contents
+			url = new URL(pl);
+			urlConnection = (HttpURLConnection) url.openConnection();
+			urlConnection.setRequestMethod("GET");
+			// set timeout for connection to 8 seconds
+			urlConnection.setConnectTimeout(8 * 1000);
+			logger.info("Making HTTP GET Request to -- " + pl);
+
+			urlConnection.connect();
+
+			logger.info("HTTP Request returned response code -- " + urlConnection.getResponseCode());
+
+			// make sure we get an ok response from server
+			if (urlConnection.getResponseCode() != 200) {
+				logger.error("Invalid response code{} " + urlConnection.getResponseCode());
+				System.out.println("ERROR. The URL " + pl + " returned response code " + urlConnection.getResponseCode()
+						+ " and is not valid. Check the url. Processing was skipped");
+				setReadError(true);
+				return contents;
+			}
+
+			// make sure we get the proper content type
+			String contentType = urlConnection.getContentType().toUpperCase();
+			if (!contentType.contains("MPEGURL")) {
+				logger.error("Invalid content type {} " + contentType);
+				System.out.println(
+						"ERROR: The URL returned a bad response content type, please make sure the url is a playlist");
+				setReadError(true);
+				return contents;
+			}
+
+			// get the contents from the file
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+			String line = "";
+			while ((line = bufferedReader.readLine()) != null) {
+				// skip blank lines in files
+				if (line.equals("")) {
+					continue;
+				}
+				contents.add(line);
+			}
+			bufferedReader.close();
+
+		} catch (MalformedURLException e1) {
+			System.out.println("ERROR: The URL " + pl + " is invalid. Check the format of the url");
+			setReadError(true);
+			logger.info("URL is invalid - " + e1.toString());
+			return contents;
+		} catch (IOException e) {
+			System.out.println("ERROR: The URL " + pl + " could not be reached");
+			setReadError(true);
+			logger.info("URL could not be reached -" + e.toString());
+			return contents;
+		} catch (Exception e) {
+			System.out.println("ERROR: Something went wrong reading the URL " + pl);
+			setReadError(true);
+			logger.info("Something went wrong reading playlist " + e.toString());
+			return contents;
+		}
+		logger.debug("<<readPlaylist()");
+		return contents;
+	}
+
+	/**
+	 * isReadError() Alert client of an error reading in the playlist file
+	 * 
+	 * @return
+	 */
+	public static boolean isReadError() {
+		return readError;
+	}
+
+	/**
+	 * setReadError set when a read error occurs
+	 * 
+	 * @param readError
+	 */
+	public static void setReadError(boolean readError) {
+		Utilities.readError = readError;
+	}
+
+	public static List<HLSVisitor> getValidators() {
+		FileInputStream input;
+		List<HLSVisitor> validators = new ArrayList<HLSVisitor>();
+		try {
+			input = new FileInputStream("conf/validator.config");
+			Properties prop = new Properties();
+			prop.load(input);
+			logger.info("PROPERTIES " + prop.toString());
+			for (Map.Entry<Object, Object> entry : prop.entrySet()) {
+				String value = (String) entry.getValue();
+				if (!value.equals("")) {
+					String[] temp = value.split(",");
+					ArrayList<String> valueList = new ArrayList<String>(Arrays.asList(temp));
+					for (String obj : valueList) {
+						try {
+							HLSVisitor name = (HLSVisitor) Class.forName(obj).newInstance();
+							logger.info("Adding a validator from config file");
+							validators.add(name);
+
+						} catch (InstantiationException e) {
+							// TODO Auto-generated catch block
+							System.out.println("ERROR - creating a new instance )");
+							logger.error("ERROR creating new instance " + e.toString());
+						} catch (IllegalAccessException e) {
+							System.out.println("Error, no access to the class trying to create from file");
+							logger.error("ERROR no access to the class trying to create from file " + e.toString());
+
+						} catch (ClassNotFoundException e) {
+							System.out.println("Error, no class found in the project");
+							logger.error("ERROR no class found " + e.toString());
+						}
+					}
+				}
+			}
+
+		} catch (FileNotFoundException e1) {
+			System.out.println(e1.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.toString());
+
+		}
+
+		return validators;
+	}
+}
